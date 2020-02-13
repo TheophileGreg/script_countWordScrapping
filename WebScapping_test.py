@@ -1,11 +1,23 @@
-import requests, re
+import requests
+
+# Set headers
+headers = requests.utils.default_headers()
+headers.update({ 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'})
+
 from bs4 import BeautifulSoup
 
-url = 'http://www.google.com/search'
-query = raw_input('Enter your search parameter: ')
-payload = { 'q' : query }
+url = "https://viago.ca/top-10-des-meilleures-villes-d-europe-pour-faire-la-fete/"
+req = requests.get(url, headers)
+soup = BeautifulSoup(req.content, 'html.parser')
 
-my_headers = { 'User-agent' : 'Mozilla/11.0' }
-r = requests.get( url, params = payload, headers = my_headers )
+data = """Sofia Paris Amsterdam""".splitlines()
+counter = {}
 
-print(r.text.count('toto'))
+for line in data: 
+        if city not in counter:
+            counter[city] = 1
+        else:
+            counter[city] +=1
+print counter
+print(soup.text)
+
