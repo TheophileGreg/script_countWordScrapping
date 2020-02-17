@@ -12,10 +12,22 @@ url = "https://viago.ca/top-10-des-meilleures-villes-d-europe-pour-faire-la-fete
 req = requests.get(url, headers)
 soup = BeautifulSoup(req.content, 'html.parser')
 
-word_counts = Counter(word for words in soup.text for word in words)
+huge_list = []  
 
-print(word_counts)
+for line in soup.text:
+    huge_list = soup.text.split()
 
 
-print(soup.word)
+villes = ['Barcelone', 'Londres']
+
+
+for ville in villes:
+    print(ville) 
+    print(huge_list.count(ville))
+#word_counts = Counter(words in huge_list)
+
+#print(word_counts)
+
+#print(huge_list) 
+
 
