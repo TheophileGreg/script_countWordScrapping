@@ -10,14 +10,10 @@ url = "https://viago.ca/top-10-des-meilleures-villes-d-europe-pour-faire-la-fete
 req = requests.get(url, headers)
 soup = BeautifulSoup(req.content, 'html.parser')
 
-data = """Sofia Paris Amsterdam""".splitlines()
-counter = {}
 
-for line in data: 
-        if city not in counter:
-            counter[city] = 1
-        else:
-            counter[city] +=1
-print counter
+
 print(soup.text)
+
+
+#print(soup.text)
 
