@@ -1,4 +1,6 @@
 import requests
+from collections import Counter
+
 
 # Set headers
 headers = requests.utils.default_headers()
@@ -10,10 +12,10 @@ url = "https://viago.ca/top-10-des-meilleures-villes-d-europe-pour-faire-la-fete
 req = requests.get(url, headers)
 soup = BeautifulSoup(req.content, 'html.parser')
 
+word_counts = Counter(word for words in soup.text for word in words)
+
+print(word_counts)
 
 
-print(soup.text)
-
-
-#print(soup.text)
+print(soup.word)
 
