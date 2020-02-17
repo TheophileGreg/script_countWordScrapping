@@ -11,18 +11,39 @@ from bs4 import BeautifulSoup
 url = "https://viago.ca/top-10-des-meilleures-villes-d-europe-pour-faire-la-fete/"
 req = requests.get(url, headers)
 soup = BeautifulSoup(req.content, 'html.parser')
-
 huge_list = []  
 
 for line in soup.text:
-    huge_list = soup.text.split()
+    huge_list = (soup.text.split())
+
+# for h2 in soup.find_all('h2'):
+#     huge_list.append(h2)
+
+# for h1 in soup.find_all('h1'):
+#     huge_list.append(h1)
 
 
-villes = ['Barcelone', 'Londres']
+# for h3 in soup.find_all('h3'):
+#     huge_list.append(h3)
+
+# for h4 in soup.find_all('h4'):
+#     huge_list.append(h4)
+
+
+# for h5 in soup.find_all('h5'):
+#     huge_list.append(h5)
+
+
+
+
+villes = ['Barcelone', 'Barcelone,' , 'Londres']
+
+# print(huge_list)
 
 
 for ville in villes:
     print(ville) 
+    
     print(huge_list.count(ville))
 #word_counts = Counter(words in huge_list)
 
