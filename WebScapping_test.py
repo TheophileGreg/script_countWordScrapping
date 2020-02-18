@@ -37,14 +37,12 @@ for line in soup.text:
 
 
 villes = ['Barcelone', 'Barcelone,' , 'Londres']
-
-# print(huge_list)
+print(huge_list)
 
 
 for ville in villes:
-    print(ville) 
-    
-    print(huge_list.count(ville))
+    print(ville)
+    print(huge_list.count('.*?(\ville\b)[^$]*)')
 #word_counts = Counter(words in huge_list)
 
 #print(word_counts)
